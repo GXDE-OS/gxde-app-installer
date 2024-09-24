@@ -6,6 +6,11 @@ if [ "$UID" != "0" ]; then
     pkexec $0 $@
     exit $?
 fi
+if [[ $(command -v aptss) ]];then
+APT_CMD=aptss
+else
+APT_CMD=/usr/bin/apt
+fi
 
 
 function zenity()
@@ -30,7 +35,8 @@ confirm_installation() {
 
         # 弹出确认窗口
         if confirm_installation "$APP"; then
-            (apt install "$APP" --reinstall -y 
+            (   ${APT_CMD} update
+                ${APT_CMD} install "$APP" --reinstall -y 
             if [ "$?" = "0" ]; then
                 echo "---------------------------------------------------------------------------"
                 echo "Info: $APP ${TRANSHELL_CONTENT_INSTALL_FINISHED}" 
