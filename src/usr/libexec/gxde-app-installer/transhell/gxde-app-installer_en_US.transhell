@@ -1,0 +1,6 @@
+#!/bin/bash
+TRANSHELL_CONTENT_PREPAREING_INSTALL="Preparing to install: "
+TRANSHELL_CONTENT_PLEASE_CONFIRM_INSTALL="Please ensure that this installation is request ed by you. If not, please cancel."
+TRANSHELL_CONTENT_INSTALL_LOG="Installation log"
+TRANSHELL_CONTENT_INSTALL_FINISHED="Install finished，please close this dialog"
+TRANSHELL_CONTENT_INSTALL_ERROR="Error happened in installation！Please install manually！"

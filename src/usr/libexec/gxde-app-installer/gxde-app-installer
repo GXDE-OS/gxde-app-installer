@@ -1,0 +1,44 @@
+#!/bin/bash
+HERE=$(dirname $(realpath $0))
+source /opt/bashimport/transhell.sh
+load_transhell_debug
+
+
+function zenity()
+{
+    # Detect the user using such display
+    local user=$(who | awk '{print $1}' | head -n 1)
+
+    # Detect the id of the user
+    local uid=$(id -u $user)
+
+    sudo -u $user DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus zenity "$@"
+}
+
+confirm_installation() {
+    zenity --question --width=300 --height=150 --text="${TRANSHELL_CONTENT_PREPAREING_INSTALL} ${1}\n\n${TRANSHELL_CONTENT_PLEASE_CONFIRM_INSTALL}"
+    return $?
+}
+
+
+
+    for APP in "$@"; do
+
+        # 弹出确认窗口
+        if confirm_installation "$APP"; then
+            (apt install "$APP" --reinstall -y 
+            if [ "$?" = "0" ]; then
+                echo "---------------------------------------------------------------------------"
+                echo "Info: $APP ${TRANSHELL_CONTENT_INSTALL_FINISHED}" 
+            else
+                echo "---------------------------------------------------------------------------"
+                echo "Err: $APP ${TRANSHELL_CONTENT_INSTALL_ERROR}" 
+            fi
+
+            )| zenity --text-info --width=500 --height=300 --title="${TRANSHELL_CONTENT_INSTALL_LOG}" --auto-scroll
+
+        else
+        continue
+        fi
+        
+    done

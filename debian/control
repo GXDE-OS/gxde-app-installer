@@ -12,5 +12,5 @@ Rules-Requires-Root: no
 Package: gxde-app-installer
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends},zenity,bash
+Depends: ${misc:Depends},zenity,bash,sudo,pkexec | polkit-0 | policykit-0,transhell
 Description: GXDE app install helper
