@@ -6,7 +6,7 @@ if [ "$UID" != "0" ]; then
     pkexec $0 $@
     exit $?
 fi
-if [[ $(command -v aptss) ]];then
+if command -v aptss;then
 APT_CMD=aptss
 else
 APT_CMD=/usr/bin/apt

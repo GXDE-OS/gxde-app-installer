@@ -1,6 +1,5 @@
-gxde-app-installer (1.0.0) UNRELEASED; urgency=low
+gxde-app-installer (1.1.0) UNRELEASED; urgency=low
 
-  * Initial release. Closes: #nnnn
-    <nnnn is the bug number of your ITP>
+  * use aptss if possible
 
  -- shenmo <shenmo@spark-app.store>  Tue, 24 Sep 2024 12:16:05 +0800
