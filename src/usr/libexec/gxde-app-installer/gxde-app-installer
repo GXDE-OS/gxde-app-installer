@@ -13,19 +13,10 @@ APT_CMD=/usr/bin/apt
 fi
 
 
-function zenity()
-{
-    # Detect the user using such display
-    local user=$(who | awk '{print $1}' | head -n 1)
 
-    # Detect the id of the user
-    local uid=$(id -u $user)
-
-    sudo -u $user DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus zenity "$@"
-}
 
 confirm_installation() {
-    zenity --question --width=300 --height=150 --text="${TRANSHELL_CONTENT_PREPAREING_INSTALL} ${1}\n\n${TRANSHELL_CONTENT_PLEASE_CONFIRM_INSTALL}"
+    garma --question --width=300 --height=150 --text="${TRANSHELL_CONTENT_PREPAREING_INSTALL} ${1}\n\n${TRANSHELL_CONTENT_PLEASE_CONFIRM_INSTALL}"
     return $?
 }
 

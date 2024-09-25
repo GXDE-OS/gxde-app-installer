@@ -1,5 +1,5 @@
-gxde-app-installer (1.1.0) UNRELEASED; urgency=low
+gxde-app-installer (1.1.1) UNRELEASED; urgency=low
 
-  * use aptss if possible
+  * use aptss if possible,use garma if no bug
 
  -- shenmo <shenmo@spark-app.store>  Tue, 24 Sep 2024 12:16:05 +0800
