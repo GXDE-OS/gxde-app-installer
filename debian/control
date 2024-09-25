@@ -12,6 +12,6 @@ Rules-Requires-Root: no
 Package: gxde-app-installer
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends},zenity,bash,sudo,pkexec | polkit-0 | policykit-0,transhell
+Depends: ${misc:Depends},zenity,garma,bash,sudo,pkexec | polkit-0 | policykit-0,transhell
 Recommends: spark-store | aptss
 Description: GXDE app install helper
