@@ -1,4 +1,5 @@
 #!/bin/bash
+xhost +
 HERE=$(dirname $(realpath $0))
 source /opt/bashimport/transhell.sh
 load_transhell_debug

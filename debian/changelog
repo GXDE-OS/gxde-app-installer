@@ -1,5 +1,6 @@
-gxde-app-installer (1.1.1) UNRELEASED; urgency=low
+gxde-app-installer (1.1.2) UNRELEASED; urgency=low
 
   * use aptss if possible,use garma if no bug
+  * 修复 无法在部分平台正确启动 的问题
 
  -- shenmo <shenmo@spark-app.store>  Tue, 24 Sep 2024 12:16:05 +0800
