@@ -1,16 +1,17 @@
 # Maintainer: CharOfString <root@charofstring.cc>
-pkgname=gxde-app-installer-git
+pkgname=gxde-app-installer
 pkgver=1.1.2
 pkgrel=1
 pkgdesc='GXDE application install helper (APT-based)'
 arch=('any')
 url="https://github.com/GXDE-OS/gxde-app-installer"
 license=('CC-BY-NC-SA-4.0')
-depends=('zenity' 'garma-git' 'bash' 'sudo' 'polkit' 'transhell-git')
+depends=('zenity' 'garma' 'bash' 'sudo' 'polkit' 'transhell')
 
 makedepends=('git')
-provides=('gxde-app-installer')
-conflicts=('gxde-app-installer')
+provides=("gxde-app-installer-git=$pkgver")
+conflicts=('gxde-app-installer-git')
+replaces=('gxde-app-installer-git')
 source=()
 sha512sums=()
 
